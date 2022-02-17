@@ -7,3 +7,8 @@
 .money-input-size{
   width: 20%;
 }
+.display-style{
+  color: red;
+  display: none;
+
+}

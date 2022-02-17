@@ -27,14 +27,20 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   const foodInputNumber = parseFloat(foodInputText);
 
 
+
   const rentInput = document.getElementById('rent-input');
   const rentInputText = rentInput.value;
   const rentInputNumber = parseFloat(rentInputText);
 
 
+
+
   const clothesInput = document.getElementById('clothes-input');
   const clothesInputText = clothesInput.value;
   const clothesInputNumber = parseFloat(clothesInputText);
+
+
+
 
 
   // update total expenses
@@ -45,9 +51,21 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   const Expenses = totalExpenses.innerText = updateTotalExpenses;
   // amount big error 
   if (updateTotalExpenses > incomeAmount()) {
-    alert('error your expenses amount is big'), totalExpenses.innerText = ' error';
+    totalExpenses.innerText = ' error';
 
   }
+  if (totalExpenses.innerText == 'error') {
+    const errorMassage = document.getElementById('display-none-second');
+    errorMassage.style.display = 'block';
+
+  }
+  if (totalExpenses.innerText == 'NaN') {
+    const errorMassage = document.getElementById('display-none');
+    errorMassage.style.display = 'block';
+
+
+  }
+
 
   const totalBalance = document.getElementById('total-balance');
   const priveousBalance = totalBalance.innerText;
