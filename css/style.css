@@ -1,6 +1,9 @@
-@media only screen and(max-width:300px) {
-  body{
-    background-color: rgb(54, 12, 12);
-  }
-  
+.money-input-bg p input{
+  background: rgb(196, 194, 194);
+  border: 0;
+  height: 2.2rem;
+  padding-left: 1rem;
+}
+.money-input-size{
+  width: 20%;
 }

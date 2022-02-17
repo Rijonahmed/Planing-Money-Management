@@ -19,13 +19,13 @@
   <header class="container my-4">
     <h1 class="text-primary text-center fw-bolder">Planing Money Management &#163;</h1>
   </header>
-  <main class="d-flex w-100 container g-4">
-    <section class="w-50 container">
+  <main class="row row-cols-1 row-cols-lg-2 container g-5 w-100 m-auto">
+    <section class=" col container">
       <img src="photo/money1.jpg" class="img-fluid" alt="">
 
     </section>
-    <section class="container w-50 bg-light">
-      <div class="text-center mt-5">
+    <section class="container col bg-light">
+      <div class="text-center mt-5 money-input-bg">
         <h4>Income</h4>
         <p>Income: <input type="text" id="income-input"></p>
         <h4>Expenses</h4>
@@ -37,10 +37,11 @@
         <h4>Total Expenses: <span id="total-expenses">00</span></h4>
         <h4>Balance:<span id="total-balance"> 00</span></h4>
 
-        <p class="my-3">Save: <input type="text"> % <button class="btn btn-primary px-5">Save</button></p>
+        <p class="my-3">Save: <input id="save-input" class="money-input-size" type="text">&nbsp;&nbsp;&nbsp; %
+          &nbsp;&nbsp;&nbsp;<button id="save-btn" class="btn btn-primary px-5">Save</button></p>
 
-        <h4>Saving Amount: <span>2000</span></h4>
-        <h4>Remaining Balance: <span>2500</span> </h3>
+        <h4>Saving Amount: <span id="saving-amount">00</span></h4>
+        <h4>Remaining Balance: <span id="remaining-balance">00</span> </h3>
 
 
 
