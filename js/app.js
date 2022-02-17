@@ -3,10 +3,11 @@ function incomeAmount() {
   const incomeInput = document.getElementById('income-input');
   const incomeInputText = incomeInput.value;
   const incomeInputNumber = parseFloat(incomeInputText);
-  if (typeof incomeInput.value == 'number') {
+
+  //error handiling 
+  if (typeof incomeInputNumber != 'number') {
 
     return alert('please give a number'), incomeInput.value = 'gives a number';
-
   }
   else if (incomeInputNumber <= 0) {
     return alert('please give a positive number'), incomeInput.value = 'positive number';
@@ -14,7 +15,7 @@ function incomeAmount() {
   }
   return incomeInputNumber;
 
-}
+};
 
 
 
@@ -42,13 +43,23 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   const updateExpenses = parseFloat(priveousExpenses);
   const updateTotalExpenses = updateExpenses + foodInputNumber + rentInputNumber + clothesInputNumber;
   const Expenses = totalExpenses.innerText = updateTotalExpenses;
+  // amount big error 
+  if (updateTotalExpenses > incomeAmount()) {
+    alert('error your expenses amount is big'), totalExpenses.innerText = ' error';
 
+  }
 
   const totalBalance = document.getElementById('total-balance');
   const priveousBalance = totalBalance.innerText;
   const updateBalance = parseFloat(priveousBalance);
 
   const balance = totalBalance.innerText = incomeAmount() - Expenses;
+
+  // error handiling with minus number
+  if (balance <= 0) {
+    totalBalance.innerText = ' error';
+
+  }
 
 
   // input emty string
@@ -83,7 +94,20 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
     savingAmount.innerText = totalSavingAmount;
 
-    remainingBalance.innerText = balance - totalSavingAmount;
+    //Error your Balance is low error 
+    if (totalSavingAmount > balance) {
+      alert('Error your Balance is low'),
+        savingAmount.innerText = 'error';
+
+
+    }
+
+    const remaining = remainingBalance.innerText = balance - totalSavingAmount;
+    // error handiling with minus number
+    if (remaining <= 0) {
+      remainingBalance.innerText = 'error';
+
+    }
 
   })
 })
