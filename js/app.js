@@ -104,7 +104,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
     const remaining = remainingBalance.innerText = balance - totalSavingAmount;
     // error handiling with minus number
-    if (remaining <= 0) {
+    if (remaining < 0) {
       remainingBalance.innerText = 'error';
 
     }
